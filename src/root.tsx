@@ -14,6 +14,17 @@ import {
 } from "solid-start";
 import "./root.css";
 
+import { createClient } from "contentful";
+
+var client = createClient({
+  space: 'nslgdnzpa24d',
+  accessToken: '-YD620bRfsUnApfr8fO4xG-v_H4iz5cpmmerqFBBUEQ',
+});
+
+client.getEntries().then(function (entries) {
+  console.log("entries", entries)
+});
+
 export default function Root() {
   return (
     <Html lang="en">
