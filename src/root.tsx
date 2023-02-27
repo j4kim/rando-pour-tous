@@ -27,17 +27,16 @@ client.getEntries().then(function (entries) {
 
 export default function Root() {
   return (
-    <Html lang="en">
+    <Html lang="fr">
       <Head>
-        <Title>SolidStart - Bare</Title>
+        <Title>Rando Pour Tous</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
+        <h1>Rando pour tous</h1>
         <Suspense>
           <ErrorBoundary>
-            <A href="/">Index</A>
-            <A href="/about">About</A>
             <Routes>
               <FileRoutes />
             </Routes>
