@@ -10,18 +10,22 @@ const client = createClient({
 export function routeData() {
   return createRouteData(async () => {
     const entries = await client.getEntries();
-    const items = entries.items
-    const sections = items.filter(i => i.sys.contentType.sys.id === 'section')
-    return sections
+    const items = entries.items;
+    const sections = items.filter(
+      (i) => i.sys.contentType.sys.id === "section"
+    );
+    return sections;
   });
 }
 
 export default function Home() {
   const sections = useRouteData<typeof routeData>();
 
-  return <main>
-    <For each={sections()}>
-      {(section) => <p>{JSON.stringify(section.fields)}</p>}
-    </For>
-  </main>;
+  return (
+    <main>
+      <For each={sections()}>
+        {(section) => <p>{JSON.stringify(section.fields)}</p>}
+      </For>
+    </main>
+  );
 }
