@@ -13,7 +13,7 @@ import {
   Title,
 } from "solid-start";
 import "./root.css";
-import Logo from "./components/logo"
+import Logo from "./components/logo";
 
 export default function Root() {
   return (
@@ -25,7 +25,9 @@ export default function Root() {
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
-        <Logo />
+        <header>
+          <Logo />
+        </header>
         <Suspense>
           <ErrorBoundary>
             <Routes>
