@@ -13,7 +13,7 @@ import {
   Title,
 } from "solid-start";
 import "./root.css";
-import Logo from "./components/logo";
+import Logo from "./components/Logo";
 
 export default function Root() {
   return (
