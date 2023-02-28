@@ -1,12 +1,12 @@
 // @refresh reload
 import { Suspense } from "solid-js";
 import {
-  A,
   Body,
   ErrorBoundary,
   FileRoutes,
   Head,
   Html,
+  Link,
   Meta,
   Routes,
   Scripts,
@@ -19,6 +19,7 @@ export default function Root() {
     <Html lang="fr">
       <Head>
         <Title>Rando Pour Tous</Title>
+        <Link rel="icon" href="/rando-pour-tous.svg" />
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
