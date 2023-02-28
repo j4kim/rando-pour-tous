@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,400;0,600;1,200;1,400;1,600&display=swap');
+
 :root {
   font-family: Nunito, sans-serif;
 }
+
 html, body {
   margin: 0;
   padding: 0;
 }
+
 header {
   padding: 4em;
   text-align: center;
+}
+
+article {
+  padding: 2em;
+}
+
+h1 {
+  margin: 0 0 1em 0;
+  font-weight: 400;
 }

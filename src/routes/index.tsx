@@ -1,6 +1,7 @@
 import { For } from "solid-js";
 import { createRouteData, useRouteData } from "solid-start";
 import { createClient } from "contentful";
+import Section from "~/components/Section";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -23,9 +24,7 @@ export default function Home() {
 
   return (
     <main>
-      <For each={sections()}>
-        {(section) => <p>{JSON.stringify(section.fields)}</p>}
-      </For>
+      <For each={sections()}>{(s) => <Section fields={s.fields} />}</For>
     </main>
   );
 }
