@@ -1,3 +1,5 @@
+import "./Section.scss";
+
 export default function ({ fields }) {
   return (
     <article
