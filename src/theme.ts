@@ -7,8 +7,6 @@ const theme = {
   darkBlue: "hsl(240, 25%, 30%)", // #393960
   darkestBlue: "hsl(210, 30%, 15%)",
   brick: "hsl(1, 55%, 60%)", // #d16361
-  petals: "white",
-  logoBorder: "white",
 };
 
 export default theme;
