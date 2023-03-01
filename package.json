@@ -7,6 +7,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "cypress": "^10.11.0",
     "sass": "^1.58.3",
     "solid-start-netlify": "^0.1.0",
