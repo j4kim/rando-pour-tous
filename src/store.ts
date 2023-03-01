@@ -16,5 +16,7 @@ export const sections = () =>
 
 export const sortedSections = () => sortBy(sections(), "fields.order");
 
+createEffect(() => console.log("sortedSections", sortedSections()));
+
 export const events = () =>
   entries().filter((i) => i.sys.contentType.sys.id === "event");
