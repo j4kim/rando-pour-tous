@@ -4,7 +4,6 @@ import listPlugin from "@fullcalendar/list";
 import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
 import { events } from "~/store";
-import dayjs from "dayjs";
 import "./Calendar.css";
 
 export default function () {
@@ -20,17 +19,21 @@ export default function () {
         center: "title",
         right: "dayGridMonth,listYear",
       },
-      events: events().map((e) => e.fields),
+      events: events().map((e) => ({ ...e.fields, id: e.sys.id })),
+      eventClassNames: ({ event }) => "id-" + event.id,
       eventClick: function ({ view, event }) {
         if (view.type === "listYear") return;
         calendar.changeView("listYear");
-        const date = dayjs(event.start).format("YYYY-MM-DD");
         const scroller = cal.querySelector(".fc-scroller");
-        const tr: HTMLElement = scroller.querySelector(`[data-date="${date}"]`);
-        scroller.scrollTop = tr.offsetTop;
-        const eventTr = tr.nextElementSibling;
-        eventTr.classList.add("highlight");
-        setTimeout(() => eventTr.classList.remove("highlight"), 800);
+        const eventTrs = [
+          ...scroller.querySelectorAll(`.id-${event.id}`),
+        ] as HTMLElement[];
+        scroller.scrollTop = eventTrs[0].offsetTop - 41;
+        eventTrs.forEach((tr) => tr.classList.add("highlight"));
+        setTimeout(
+          () => eventTrs.forEach((tr) => tr.classList.remove("highlight")),
+          1200
+        );
       },
     });
     calendar.render();
