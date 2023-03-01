@@ -38,7 +38,7 @@ export default function Root() {
         <footer>
           <article>
             <div>
-              Développement <a href="https://3sdl.ch">3sdl</a>
+              Développement <a href="https://3sdl.ch">3sdl</a> 🐝
             </div>
           </article>
         </footer>
