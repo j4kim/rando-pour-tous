@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import { createRouteData, useRouteData } from "solid-start";
 import { createClient } from "contentful";
 import Section from "~/components/Section";
+import { sortBy } from "lodash";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -15,7 +16,7 @@ export function routeData() {
     const sections = items.filter(
       (i) => i.sys.contentType.sys.id === "section"
     );
-    return sections;
+    return sortBy(sections, "fields.order");
   });
 }
 
