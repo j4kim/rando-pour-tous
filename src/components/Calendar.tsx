@@ -3,6 +3,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import listPlugin from "@fullcalendar/list";
 import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
+import { events } from "~/store";
 
 export default function () {
   let cal;
@@ -17,6 +18,7 @@ export default function () {
         center: "title",
         right: "dayGridMonth,listYear",
       },
+      events: events().map((e) => e.fields),
     }).render();
   });
 
