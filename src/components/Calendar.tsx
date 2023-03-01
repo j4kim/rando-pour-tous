@@ -5,6 +5,7 @@ import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
 import { events } from "~/store";
 import dayjs from "dayjs";
+import "./Calendar.css";
 
 export default function () {
   let cal: HTMLDivElement;
@@ -27,6 +28,9 @@ export default function () {
         const scroller = cal.querySelector(".fc-scroller");
         const tr: HTMLElement = scroller.querySelector(`[data-date="${date}"]`);
         scroller.scrollTop = tr.offsetTop;
+        const eventTr = tr.nextElementSibling;
+        eventTr.classList.add("highlight");
+        setTimeout(() => eventTr.classList.remove("highlight"), 800);
       },
     });
     calendar.render();
