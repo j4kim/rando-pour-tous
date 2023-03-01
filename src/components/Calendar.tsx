@@ -4,22 +4,32 @@ import listPlugin from "@fullcalendar/list";
 import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
 import { events } from "~/store";
+import dayjs from "dayjs";
 
 export default function () {
-  let cal;
+  let cal: HTMLDivElement;
 
   onMount(() => {
-    new Calendar(cal, {
+    const calendar = new Calendar(cal, {
       locale,
       plugins: [dayGridPlugin, listPlugin],
-      initialView: "listYear",
+      initialView: "dayGridMonth",
       headerToolbar: {
         left: "prev,next today",
         center: "title",
         right: "dayGridMonth,listYear",
       },
       events: events().map((e) => e.fields),
-    }).render();
+      eventClick: function ({ view, event }) {
+        if (view.type === "listYear") return;
+        calendar.changeView("listYear");
+        const date = dayjs(event.start).format("YYYY-MM-DD");
+        const scroller = cal.querySelector(".fc-scroller");
+        const tr: HTMLElement = scroller.querySelector(`[data-date="${date}"]`);
+        scroller.scrollTop = tr.offsetTop;
+      },
+    });
+    calendar.render();
   });
 
   return <div ref={cal} style="margin: 1em auto; font-size:16px"></div>;
