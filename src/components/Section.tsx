@@ -1,9 +1,15 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Show } from "solid-js";
+import { Dynamic } from "solid-js/web";
 import { getColor } from "~/theme";
+import Calendar from "./Calendar";
 import "./Section.scss";
 
 export default function ({ fields }) {
+  const components = {
+    calendar: Calendar,
+  };
+
   return (
     <article
       id={fields.id}
@@ -16,6 +22,7 @@ export default function ({ fields }) {
       <Show when={fields.content}>
         <div innerHTML={documentToHtmlString(fields.content)}></div>
       </Show>
+      <Dynamic component={components[fields.type]} />
     </article>
   );
 }
