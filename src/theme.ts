@@ -6,4 +6,6 @@ export default {
   blue: "hsl(241, 36%, 38%)", // #3f3e83
   darkBlue: "hsl(240, 25%, 30%)", // #393960
   brick: "hsl(1, 55%, 60%)", // #d16361
+  petals: "white",
+  logoBorder: "white",
 }
