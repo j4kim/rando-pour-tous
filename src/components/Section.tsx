@@ -5,16 +5,15 @@ import "./Section.scss";
 export default function ({ fields }) {
   return (
     <article
+      id={fields.id}
       style={{
         "background-color": fields.backgroundColor,
       }}
     >
-      <div>
-        <h1>{fields.title}</h1>
-        <Show when={fields.content}>
-          <div innerHTML={documentToHtmlString(fields.content)}></div>
-        </Show>
-      </div>
+      <h1>{fields.title}</h1>
+      <Show when={fields.content}>
+        <div innerHTML={documentToHtmlString(fields.content)}></div>
+      </Show>
     </article>
   );
 }
