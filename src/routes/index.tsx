@@ -3,6 +3,7 @@ import { createRouteData, useRouteData } from "solid-start";
 import { createClient } from "contentful";
 import Section from "~/components/Section";
 import { sortBy } from "lodash";
+import Menu from "~/components/Menu";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -24,8 +25,11 @@ export default function Home() {
   const sections = useRouteData<typeof routeData>();
 
   return (
-    <main>
-      <For each={sections()}>{(s) => <Section fields={s.fields} />}</For>
-    </main>
+    <>
+      <Menu sections={sections()}></Menu>
+      <main>
+        <For each={sections()}>{(s) => <Section fields={s.fields} />}</For>
+      </main>
+    </>
   );
 }
