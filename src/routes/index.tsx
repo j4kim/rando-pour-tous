@@ -1,10 +1,9 @@
 import { createEffect, createResource, For, Show } from "solid-js";
-import { createRouteData, useRouteData } from "solid-start";
+import { useRouteData } from "solid-start";
 import { createClient } from "contentful";
 import SectionComponent from "~/components/Section";
-import { filter, sortBy } from "lodash";
 import Menu from "~/components/Menu";
-import { Section } from "~/types";
+import { setItems, sortedSections } from "~/store";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -22,15 +21,9 @@ export function routeData() {
 export default function Home() {
   const data = useRouteData<typeof routeData>();
 
-  const items = data();
+  data();
 
-  const sections = () =>
-    items.filter((i) => i.sys.contentType.sys.id === "section");
-
-  const events = () =>
-    items.filter((i) => i.sys.contentType.sys.id === "event");
-
-  const sortedSections = () => sortBy(sections(), "fields.order");
+  createEffect(() => setItems(data()));
 
   return (
     <Show when={!data.loading} fallback="loading">
