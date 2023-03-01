@@ -12,8 +12,8 @@ import {
   Scripts,
   Title,
 } from "solid-start";
+import Header from "./components/Header";
 import "./root.css";
-import Logo from "./components/Logo";
 
 export default function Root() {
   return (
@@ -25,9 +25,7 @@ export default function Root() {
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
-        <header>
-          <Logo />
-        </header>
+        <Header />
         <Suspense>
           <ErrorBoundary>
             <Routes>
