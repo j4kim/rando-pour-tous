@@ -15,6 +15,7 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^16.0.2",
     "@solidjs/meta": "^0.28.0",
     "@solidjs/router": "^0.5.0",
     "contentful": "^9.3.3",
