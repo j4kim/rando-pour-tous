@@ -23,7 +23,7 @@ footer {
 }
 
 a {
-  color: initial;
+  color: inherit;
   font-weight: 700;
   text-decoration: none;
 }
