@@ -3,9 +3,9 @@ nav {
   ul {
     list-style: none;
     padding: 0;
-    li a {
-      color: initial;
-      font-weight: 600;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
   }
 }
