@@ -12,11 +12,16 @@ html, body {
 }
 
 header {
-  padding: 4em;
+  padding: 4em 0;
   text-align: center;
 }
 
 h1 {
   margin: 0 0 1em 0;
   font-weight: 400;
+}
+
+footer {
+  font-size: 0.7em;
+  text-align: right;
 }

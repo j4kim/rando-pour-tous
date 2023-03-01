@@ -35,6 +35,13 @@ export default function Root() {
             </Routes>
           </ErrorBoundary>
         </Suspense>
+        <footer>
+          <article>
+            <div>
+              Développement <a href="https://3sdl.ch">3sdl</a>
+            </div>
+          </article>
+        </footer>
         <Scripts />
       </Body>
     </Html>
