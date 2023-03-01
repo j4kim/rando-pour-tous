@@ -1,12 +1,20 @@
 import { sortBy } from "lodash";
-import { createSignal } from "solid-js";
+import { createEffect, createSignal } from "solid-js";
 
-export const [items, setItems] = createSignal([]);
+export const [data, setData] = createSignal({ entries: [], assets: [] });
+
+export const entries = () => data().entries.items ?? [];
+
+createEffect(() => console.log("entries", entries()));
+
+export const assets = () => data().assets.items ?? [];
+
+createEffect(() => console.log("assets", assets()));
 
 export const sections = () =>
-  items().filter((i) => i.sys.contentType.sys.id === "section");
-
-export const events = () =>
-  items().filter((i) => i.sys.contentType.sys.id === "event");
+  entries().filter((i) => i.sys.contentType.sys.id === "section");
 
 export const sortedSections = () => sortBy(sections(), "fields.order");
+
+export const events = () =>
+  entries().filter((i) => i.sys.contentType.sys.id === "event");

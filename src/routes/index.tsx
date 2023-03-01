@@ -3,7 +3,7 @@ import { useRouteData } from "solid-start";
 import { createClient } from "contentful";
 import SectionComponent from "~/components/Section";
 import Menu from "~/components/Menu";
-import { setItems, sortedSections } from "~/store";
+import { setData, sortedSections } from "~/store";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -12,8 +12,11 @@ const client = createClient({
 
 export function routeData() {
   const [data, refetch] = createResource(async () => {
-    const entries = await client.getEntries();
-    return entries.items as any[];
+    const [entries, assets] = await Promise.all([
+      client.getEntries(),
+      client.getAssets(),
+    ]);
+    return { entries, assets };
   });
   return data;
 }
@@ -23,7 +26,7 @@ export default function Home() {
 
   data();
 
-  createEffect(() => setItems(data()));
+  createEffect(() => setData(data()));
 
   return (
     <Show when={!data.loading} fallback="loading">
