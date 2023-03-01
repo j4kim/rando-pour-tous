@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <Show when={!data.loading} fallback="loading">
-      <Menu sections={sortedSections()}></Menu>
+      <Menu />
       <main>
         <For each={sortedSections()}>
           {(s) => <SectionComponent fields={s.fields} />}

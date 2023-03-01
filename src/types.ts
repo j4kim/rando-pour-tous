@@ -5,7 +5,3 @@ export type Section = {
   };
   sys: any;
 };
-
-export type MenuProps = {
-  sections: Section[];
-};
