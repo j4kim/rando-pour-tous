@@ -1,9 +1,10 @@
 import { For } from "solid-js";
 import { createRouteData, useRouteData } from "solid-start";
 import { createClient } from "contentful";
-import Section from "~/components/Section";
+import SectionComponent from "~/components/Section";
 import { sortBy } from "lodash";
 import Menu from "~/components/Menu";
+import { Section } from "~/types";
 
 const client = createClient({
   space: "nslgdnzpa24d",
@@ -13,7 +14,7 @@ const client = createClient({
 export function routeData() {
   return createRouteData(async () => {
     const entries = await client.getEntries();
-    const items = entries.items;
+    const items = entries.items as Section[];
     const sections = items.filter(
       (i) => i.sys.contentType.sys.id === "section"
     );
@@ -28,7 +29,9 @@ export default function Home() {
     <>
       <Menu sections={sections()}></Menu>
       <main>
-        <For each={sections()}>{(s) => <Section fields={s.fields} />}</For>
+        <For each={sections()}>
+          {(s) => <SectionComponent fields={s.fields} />}
+        </For>
       </main>
     </>
   );
