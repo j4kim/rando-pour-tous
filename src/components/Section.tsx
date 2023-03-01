@@ -1,5 +1,6 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { Show } from "solid-js";
+import { getColor } from "~/theme";
 import "./Section.scss";
 
 export default function ({ fields }) {
@@ -7,7 +8,8 @@ export default function ({ fields }) {
     <article
       id={fields.id}
       style={{
-        "background-color": fields.backgroundColor,
+        "background-color": getColor(fields.backgroundColor),
+        color: getColor(fields.color),
       }}
     >
       <h1>{fields.title}</h1>

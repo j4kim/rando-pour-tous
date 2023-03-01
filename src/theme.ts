@@ -1,4 +1,4 @@
-export default {
+const theme = {
   gold: "hsl(51, 48%, 60%)", // #c9bb67
   lightGold: "hsl(51, 55%, 82%)", // #eae2b7
   green: "hsl(164, 52%, 32%)", // #277c66
@@ -8,4 +8,10 @@ export default {
   brick: "hsl(1, 55%, 60%)", // #d16361
   petals: "white",
   logoBorder: "white",
+}
+
+export default theme
+
+export function getColor(key) {
+  return theme[key] ?? key
 }
