@@ -4,8 +4,6 @@ import listPlugin from "@fullcalendar/list";
 import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
 
-console.log(locale);
-
 export default function () {
   let cal;
 
