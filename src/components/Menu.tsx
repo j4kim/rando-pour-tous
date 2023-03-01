@@ -1,14 +1,5 @@
 import { For } from "solid-js";
-
-type Section = {
-  fields: {
-    title: string;
-  };
-};
-
-type MenuProps = {
-  sections: Section[];
-};
+import { MenuProps } from "~/types";
 
 export default function (props: MenuProps) {
   const sections = props.sections;
