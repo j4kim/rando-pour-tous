@@ -18,7 +18,9 @@ export default function () {
         "background-size": "auto 300px",
       }}
     >
-      <Logo />
+      <a href="/">
+        <Logo />
+      </a>
     </header>
   );
 }
