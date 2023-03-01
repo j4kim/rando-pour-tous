@@ -5,13 +5,14 @@ const theme = {
   darkGreen: "hsl(163, 45%, 26%)", // #24604f
   blue: "hsl(241, 36%, 38%)", // #3f3e83
   darkBlue: "hsl(240, 25%, 30%)", // #393960
+  darkestBlue: "hsl(210, 30%, 15%)",
   brick: "hsl(1, 55%, 60%)", // #d16361
   petals: "white",
   logoBorder: "white",
-}
+};
 
-export default theme
+export default theme;
 
 export function getColor(key) {
-  return theme[key] ?? key
+  return theme[key] ?? key;
 }
