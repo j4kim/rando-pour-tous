@@ -7,7 +7,7 @@ export const entries = () => data().entries.items ?? [];
 
 createEffect(() => console.log("entries", entries()));
 
-export const assets = () => data().assets.items ?? [];
+export const assets = (): any[] => data().assets.items ?? [];
 
 createEffect(() => console.log("assets", assets()));
 
