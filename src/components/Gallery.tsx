@@ -7,12 +7,10 @@ export default function () {
     <div class="gallery">
       <For each={assets()}>
         {(asset) => (
-          <div>
-            <img
-              src={`${asset.fields.file.url}?w=160&h=160&fit=fill`}
-              alt={asset.fields.title}
-            />
-          </div>
+          <img
+            src={`${asset.fields.file.url}?w=160&h=160&fit=fill`}
+            alt={asset.fields.title}
+          />
         )}
       </For>
     </div>
