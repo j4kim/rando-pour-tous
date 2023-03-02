@@ -1,7 +1,11 @@
 article {
-  padding: 2em;
+  padding: 2em 1em;
   white-space: pre-line;
   scroll-margin-top: 110px;
+
+  @media screen and (min-width: 700px) {
+    padding: 2em;
+  }
 
   > * {
     margin: auto;
