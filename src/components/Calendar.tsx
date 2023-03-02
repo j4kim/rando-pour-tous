@@ -4,7 +4,7 @@ import listPlugin from "@fullcalendar/list";
 import { onMount } from "solid-js";
 import locale from "@fullcalendar/core/locales/fr";
 import { events } from "~/store";
-import "./Calendar.css";
+import "./Calendar.scss";
 
 export default function () {
   let cal: HTMLDivElement;

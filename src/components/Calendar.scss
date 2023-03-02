@@ -1,10 +1,8 @@
 .calendar {
   margin: 1em auto;
   font-size: 12px;
-}
 
-@media screen and (min-width: 600px) {
-  .calendar {
+  @media screen and (min-width: 600px) {
     font-size: 16px;
   }
 }
