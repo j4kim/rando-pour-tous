@@ -39,5 +39,9 @@ export default function () {
     calendar.render();
   });
 
-  return <div ref={cal} class="calendar"></div>;
+  return (
+    <div class="calendar-wrapper">
+      <div ref={cal}></div>
+    </div>
+  );
 }
