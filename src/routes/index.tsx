@@ -6,8 +6,8 @@ import Menu from "~/components/Menu";
 import { setData, sortedSections } from "~/store";
 
 const client = createClient({
-  space: "nslgdnzpa24d",
-  accessToken: "-YD620bRfsUnApfr8fO4xG-v_H4iz5cpmmerqFBBUEQ",
+  space: import.meta.env.VITE_CONTENTFUL_SPACE,
+  accessToken: import.meta.env.VITE_CONTENTFUL_TOKEN,
 });
 
 export function routeData() {
