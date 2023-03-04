@@ -37,8 +37,8 @@ export default function Root() {
           <article>
             <div>
               Développement{" "}
-              <a href="https://3sdl.ch" target="_blank">
-                3sdl
+              <a href={process.env.DEVELOPER_SITE} target="_blank">
+                {process.env.DEVELOPER_SIGNATURE}
               </a>{" "}
               🐝
             </div>
