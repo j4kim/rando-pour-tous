@@ -12,12 +12,28 @@ Pour Ajouter ou supprimer des photos, utiliser l'onglet Media.
 
 ## Développement
 
-```
-npm i
-```
+Installer les dépendances:
 
 ```
-npm run dev -- --open
+npm install
+```
+
+Installer le [netflify-cli](https://cli.netlify.com/)
+
+```
+npm install netlify-cli -g
+```
+
+Lier netflify-cli au site [rando-pour-tous](https://app.netlify.com/sites/rando-pour-tous) sur netflify:
+
+```
+netlify link
+```
+
+Lancer en local:
+
+```
+netlify dev
 ```
 
 ## Déploiement
