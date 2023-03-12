@@ -1,4 +1,4 @@
-import { createEffect, createResource, For, Show } from "solid-js";
+import { createEffect, createResource, For, onMount, Show } from "solid-js";
 import { useRouteData } from "solid-start";
 import { createClient } from "contentful";
 import SectionComponent from "~/components/Section";
@@ -27,6 +27,15 @@ export default function Home() {
   data();
 
   createEffect(() => setData(data()));
+
+  onMount(() => {
+    const hash = location.hash
+    if (!hash) return
+    setTimeout(() => {
+      location.hash = ''
+      location.hash = hash
+    }, 100)
+  })
 
   return (
     <Show when={!data.loading} fallback="loading">
